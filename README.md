@@ -233,3 +233,8 @@ The command interpreter is updated to include the `update` command. It can updat
 ## 16. Update from dictionary
 
 The `console.py` interpreter is updated to support updating an instance based on its ID with a dictionary representation using `<class name>.update(<id>, <dictionary representation>)`. It handles errors similarly to previous commands.
+
+Contributors:
+1. Haruna Bah
+
+In this task, we will work on updating instances using a dictionary with attributes such as 'first_name' and 'age'. The provided test `test_console.py` demonstrates this functionality.
