@@ -31,3 +31,61 @@ $ "python3 -m unittest discover tests" | bash
 ```
 
 This command ensures that all your tests are executed successfully, even when not interacting directly with the interpreter.
+
+## Execution
+
+Your shell should function in both interactive and non-interactive modes. Here's how it should work:
+
+**Interactive Mode:**
+```bash
+$ ./console.py
+(hbnb)help
+
+Documented commands (type help <topic>):
+========================================
+EOF  all  count  create  destroy  help  nothing  quit  show  update
+
+(hbnb)
+(hbnb) 
+(hbnb)quit
+$ 
+```
+
+**Non-Interactive Mode (Similar to the Shell Project in C):**
+```bash
+$ echo "help" | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  help  quit
+(hbnb) 
+$
+$ cat test_help
+help
+$
+$ cat test_help | ./console.py
+(hbnb)
+
+Documented commands (type help <topic>):
+========================================
+EOF  all  count  create  destroy  help  nothing  quit  show  update
+(hbnb) 
+$
+```
+
+It's essential to ensure that all tests pass successfully in non-interactive mode as well:
+
+```bash
+$ echo "python3 -m unittest discover tests" | bash
+```
+```
+.......
+----------------------------------------------------------------------
+Ran 52 tests in 0.021s
+
+OK
+```
+
+This demonstrates that your shell can handle both interactive and non-interactive input and is capable of executing all the required commands effectively.
+
