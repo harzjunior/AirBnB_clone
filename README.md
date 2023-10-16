@@ -11,3 +11,23 @@ Each task within this phase is intricately connected and contributes to the foll
 * Develop all the classes necessary for the AirBnB application (e.g., [User, State, City, Place...]) that inherit from the [BaseModel] class.
 * Implement the initial abstracted storage engine for the project, known as File storage.
 * Create comprehensive unit tests to validate all our classes and the storage engine's functionality.
+
+## Understanding a Command Interpreter
+
+Have you ever used a Shell? Well, a command interpreter is similar, but it's tailored to a specific purpose. In our context, we aim to create a tool for effectively managing the components of our project.
+
+With this command interpreter, you can perform the following key tasks:
+
+* **Create a new object:** For example, you can generate a new User or a new Place in the context of our project.
+* **Retrieve an object:** Whether it's stored in a file, a database, or elsewhere, you can retrieve an object.
+* **Perform operations on objects:** This includes actions like counting objects, computing statistics, and more.
+* **Update object attributes:** You have the ability to modify the attributes of an object as needed.
+* **Destroy an object:** When it's time to remove an object, you can do so.
+
+Moreover, it's essential to ensure that all tests are not only functional in interactive mode but also in non-interactive mode. You can achieve this by running the following command:
+
+```bash
+echo "python3 -m unittest discover tests" | bash
+```
+
+This command ensures that all your tests are executed successfully, even when not interacting directly with the interpreter.
