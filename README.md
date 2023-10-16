@@ -86,8 +86,32 @@ Ran 52 tests in 0.021s
 
 OK
 ```
+## Tasks
+
+### 0. README, AUTHORS [README.md, AUTHORS]
+* Write a comprehensive README.md, which includes:
+  * A project description.
+  * An explanation of the command interpreter, covering how to start and use it.
+* Create an AUTHORS file at the root of your repository, listing all individuals who have contributed content to the project. You can reference the format used in [Docker's AUTHORS page](https://github.com/moby/moby/blob/master/AUTHORS).
+* Utilize branches and pull requests on GitHub to facilitate efficient team collaboration and organization.
+
+### 1. Be PEP8 compliant! [ ...]
+* Ensure that your code adheres to the PEP8 style guidelines, promoting clean and readable code.
+
+### 2. Unittests [tests/]
+* Implement unit tests for all your files, classes, and functions.
+* Verify that your unit tests pass both in interactive mode and non-interactive mode using the following command:
+  ```
+  python3 -m unittest discover tests
+  ```
+  ```
+  echo "python3 -m unittest discover tests" | bash
+  ```
+
+These tasks encompass project documentation, code quality, and comprehensive testing to ensure the robustness of your command interpreter.
 
 This demonstrates that your shell can handle both interactive and non-interactive input and is capable of executing all the required commands effectively.
+
 ## 3. BaseModel
 
 In the context of the `models/base_model.py` module and its associated components, we are tasked with creating a class named `BaseModel`. This class will serve as the foundation for all other classes in the project and will define common attributes and methods that will be shared across various objects.
@@ -123,6 +147,7 @@ You will have a comprehensive web application, consisting of the following compo
 4. **API (Application Programming Interface)**: The API functions as a communication interface between the front-end and your data storage. It enables operations such as retrieving, creating, deleting, and updating data, facilitating seamless interaction between the user interface and your data storage.
 
 The final comment appears to reference running tests using `./test_base_model.py`. This command likely runs tests for the Base Model class or module to ensure its functionality. This is an essential part of maintaining the application's robustness and stability.
+
 ## 4. Create BaseModel from dictionary
 
 In this step, we aim to recreate an instance of the `BaseModel` class from a dictionary representation. This is the reverse process of the `to_dict()` method we implemented earlier.
