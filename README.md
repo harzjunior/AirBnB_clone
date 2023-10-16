@@ -27,7 +27,7 @@ With this command interpreter, you can perform the following key tasks:
 Moreover, it's essential to ensure that all tests are not only functional in interactive mode but also in non-interactive mode. You can achieve this by running the following command:
 
 ```bash
-echo "python3 -m unittest discover tests" | bash
+$ "python3 -m unittest discover tests" | bash
 ```
 
 This command ensures that all your tests are executed successfully, even when not interacting directly with the interpreter.
