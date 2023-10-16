@@ -123,6 +123,48 @@ You will have a comprehensive web application, consisting of the following compo
 4. **API (Application Programming Interface)**: The API functions as a communication interface between the front-end and your data storage. It enables operations such as retrieving, creating, deleting, and updating data, facilitating seamless interaction between the user interface and your data storage.
 
 The final comment appears to reference running tests using `./test_base_model.py`. This command likely runs tests for the Base Model class or module to ensure its functionality. This is an essential part of maintaining the application's robustness and stability.
+## 4. Create BaseModel from dictionary
+
+In this step, we aim to recreate an instance of the `BaseModel` class from a dictionary representation. This is the reverse process of the `to_dict()` method we implemented earlier.
+
+Here's the expected flow:
+
+```
+<class 'BaseModel'> -> to_dict() -> <class 'dict'> -> <class 'BaseModel'>
+```
+
+The objective is to ensure that we can create a `BaseModel` instance using the dictionary representation we obtain from the `to_dict()` method. A test suite has been prepared to validate this functionality.
+
+## 5. Store first object
+
+Building on the previous step, we are now able to recreate a `BaseModel` from another one by using a dictionary representation. This means that we can store, serialize, and deserialize a `BaseModel` instance. The entire flow of serialization and deserialization is as follows:
+
+```
+<class 'BaseModel'> -> to_dict() -> <class 'dict'> -> JSON dump -> <class 'str'> -> FILE -> <class 'str'> -> JSON load -> <class 'dict'> -> <class 'BaseModel'>
+```
+
+In summary, the process involves converting a `BaseModel` instance to a dictionary, serializing it to JSON, saving it to a file, loading it from the file, deserializing the JSON, and reconstructing a `BaseModel` instance.
+
+A test suite, `test_save_reload_base_model.py`, is provided to ensure the correct implementation of this functionality.
+
+## 6. Console 0.0.1
+
+In this step, you are required to create a program called `console.py` that serves as the entry point for the command interpreter. This console will allow you to interact with your project through various commands.
+
+The specifications for this console are as follows:
+
+* You must use the `cmd` module.
+* Your class definition should be `class HBNBCommand(cmd.Cmd)`.
+* The command interpreter should implement the following commands:
+  * `quit` and `EOF` to exit the program.
+  * `help` (provided by default by `cmd`, but you should keep it updated and documented as you work through tasks).
+* The custom prompt should be `(hbnb)`.
+* An empty line followed by pressing `ENTER` should not execute any commands.
+* Your code should not be executed when imported.
+
+The example usage provided demonstrates how the console should work, including the use of the `help` command and the custom prompt `(hbnb)`.
+
+Once implemented, your console will become the primary interface for interacting with the project, allowing you to issue commands and perform various actions within the application.
 
 ## 7. Console 0.1
 
