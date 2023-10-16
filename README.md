@@ -88,17 +88,17 @@ OK
 ```
 ## Tasks
 
-### 0. README, AUTHORS [README.md, AUTHORS]
+## 0. README, AUTHORS [README.md, AUTHORS]
 * Write a comprehensive README.md, which includes:
   * A project description.
   * An explanation of the command interpreter, covering how to start and use it.
 * Create an AUTHORS file at the root of your repository, listing all individuals who have contributed content to the project. You can reference the format used in [Docker's AUTHORS page](https://github.com/moby/moby/blob/master/AUTHORS).
 * Utilize branches and pull requests on GitHub to facilitate efficient team collaboration and organization.
 
-### 1. Be PEP8 compliant! [ ...]
+## 1. Be PEP8 compliant! [ ...]
 * Ensure that your code adheres to the PEP8 style guidelines, promoting clean and readable code.
 
-### 2. Unittests [tests/]
+## 2. Unittests [tests/]
 * Implement unit tests for all your files, classes, and functions.
 * Verify that your unit tests pass both in interactive mode and non-interactive mode using the following command:
   ```
