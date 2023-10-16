@@ -88,4 +88,38 @@ OK
 ```
 
 This demonstrates that your shell can handle both interactive and non-interactive input and is capable of executing all the required commands effectively.
+## 3. BaseModel
 
+In the context of the `models/base_model.py` module and its associated components, we are tasked with creating a class named `BaseModel`. This class will serve as the foundation for all other classes in the project and will define common attributes and methods that will be shared across various objects.
+
+Here's an outline of the key attributes and methods for the `BaseModel` class:
+
+### Public Instance Attributes:
+
+* `id` (string): An attribute that is assigned a universally unique identifier (UUID) when an instance is created. You can generate a unique ID using `uuid.uuid4()` and then convert it to a string. The objective is to ensure that each `BaseModel` instance has a unique ID.
+
+* `created_at` (datetime): This attribute is assigned the current date and time when an instance is created.
+
+* `updated_at` (datetime): Similar to `created_at`, this attribute is assigned the current date and time when an instance is created, and it is updated every time the object is modified.
+
+### Public Instance Methods:
+
+* `__str__(self)`: This method defines how an instance should be represented as a string. It should print in the following format: `[<class name>] (<self.id>) <self.__dict__>`. This is a human-readable representation of the object.
+
+* `save(self)`: This method is responsible for updating the public instance attribute `updated_at` with the current date and time when it is called. It signifies that the object has been modified.
+
+* `to_dict(self)`: This method returns a dictionary containing all the keys and values of the instance's `__dict__`. It ensures that only instance attributes set will be included in the dictionary. Additionally, a key called `__class__` must be added to this dictionary, indicating the class name of the object. The `created_at` and `updated_at` attributes must be converted to string objects in ISO format (e.g., "2017-06-14T22:31:03.285259"). This method serves as the first step in the serialization and deserialization process, creating a dictionary representation of the `BaseModel` object.
+
+The `BaseModel` class and these methods will be fundamental for implementing the serialization/deserialization process for all objects within your project.
+
+You will have a comprehensive web application, consisting of the following components:
+
+1. **Command Interpreter**: This serves as a tool to manage data without the need for a visual interface, similar to working in a Shell. It's particularly valuable during the development and debugging phases.
+
+2. **Website (Front-end)**: The web application includes a website that presents the final product to users. This website combines both static and dynamic elements to create an interactive user experience.
+
+3. **Database or Files**: Your application relies on either a database or files to store data. In this context, data refers to objects relevant to the application's functionality.
+
+4. **API (Application Programming Interface)**: The API functions as a communication interface between the front-end and your data storage. It enables operations such as retrieving, creating, deleting, and updating data, facilitating seamless interaction between the user interface and your data storage.
+
+The final comment appears to reference running tests using `./test_base_model.py`. This command likely runs tests for the Base Model class or module to ensure its functionality. This is an essential part of maintaining the application's robustness and stability.
