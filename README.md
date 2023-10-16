@@ -259,6 +259,8 @@ The command interpreter is updated to include the `update` command. It can updat
 
 The `console.py` interpreter is updated to support updating an instance based on its ID with a dictionary representation using `<class name>.update(<id>, <dictionary representation>)`. It handles errors similarly to previous commands.
 
+## 17. Update Using a Dictionary [ tests/test_console.py ]
+
 Contributors:
 1. Haruna Bah
 
