@@ -123,3 +123,71 @@ You will have a comprehensive web application, consisting of the following compo
 4. **API (Application Programming Interface)**: The API functions as a communication interface between the front-end and your data storage. It enables operations such as retrieving, creating, deleting, and updating data, facilitating seamless interaction between the user interface and your data storage.
 
 The final comment appears to reference running tests using `./test_base_model.py`. This command likely runs tests for the Base Model class or module to ensure its functionality. This is an essential part of maintaining the application's robustness and stability.
+
+## 7. Console 0.1
+
+In this section, we are enhancing the functionality of the command interpreter, `console.py`, with various commands for managing different types of objects in our project. These commands include `create`, `show`, `destroy`, `all`, `update`, and they are applied to different classes.
+
+Here's a summary of the updates to the command interpreter:
+
+1. **create**: This command creates a new instance of a specified class, saves it to the JSON file, and prints its ID. If the class name is missing, it will print "**class name missing**." If the class name doesn't exist, it will print "**class doesn't exist**."
+
+2. **show**: The `show` command prints the string representation of an instance based on the class name and ID. If any part of the input is missing or if the instance does not exist, appropriate error messages are printed.
+
+3. **destroy**: This command deletes an instance based on the class name and ID, saving the change to the JSON file. It also handles various error scenarios, including missing class name, non-existent class name, missing ID, and non-existent instance.
+
+4. **all**: The `all` command prints the string representation of all instances based on the class name. The printed result is a list of strings. It handles cases where the class name is missing or does not exist.
+
+5. **update**: The `update` command updates an instance based on the class name and ID by adding or updating attributes and saving the changes to the JSON file. The usage format is `update <class name> <ID> <attribute name> "<attribute value>"`. It provides error messages for missing or non-existent class name, missing ID, missing attribute name, missing value, and disallows certain arguments.
+
+These commands are now part of the console's functionality and can be used to manipulate various objects within the project.
+
+## 8. First User
+
+In this step, a new class called `User` is created, which inherits from `BaseModel`. The `User` class is defined in the `models/user.py` module. It includes public class attributes such as `email`, `password`, `first_name`, and `last_name`, all initialized with empty strings.
+
+Additionally, the `console.py` command interpreter is updated to allow `show`, `create`, `destroy`, `update`, and `all` commands to be used with the `User` class.
+
+## 9. More classes!
+
+This step involves the creation of multiple classes, each of which inherits from `BaseModel`. The classes and their public class attributes include:
+
+* `State` (models/state.py): It has a public class attribute `name`, initialized with an empty string.
+
+* `City` (models/city.py): Public class attributes include `state_id` (initialized as an empty string, representing the State's ID) and `name` (an empty string).
+
+* `Amenity` (models/amenity.py): It has a single public class attribute, `name`, initialized as an empty string.
+
+* `Place` (models/place.py): This class includes several public class attributes: `city_id`, `user_id`, `name`, `description`, `number_rooms`, `number_bathrooms`, `max_guest`, `price_by_night`, `latitude`, `longitude`, and `amenity_ids`. Each attribute is initialized with appropriate default values.
+
+* `Review` (models/review.py): It includes public class attributes `place_id`, `user_id`, and `text`, all initialized as empty strings.
+
+## 10. Console 1.0
+
+The Console, represented by the `console.py` module, is updated to work with the newly created classes. The `FileStorage` class is also enhanced to manage the serialization and deserialization of all the new classes: `Place`, `State`, `City`, `Amenity`, and `Review`.
+
+The command interpreter is updated to allow commands like `show`, `create`, `destroy`, `update`, and `all` to be used with all classes created previously, including the new ones.
+
+## 11. All instances by class name
+
+The command interpreter is updated to include the ability to retrieve all instances of a class using `<class name>.all()`.
+
+## 12. Count instances
+
+The command interpreter is updated to include the ability to count the number of instances of a class using `<class name>.count()`.
+
+## 13. Show
+
+The `console.py` interpreter is further updated to retrieve an instance based on its ID using `<class name>.show(<id>)`. It handles errors in a similar fashion to previous commands.
+
+## 14. Destroy
+
+The `console.py` interpreter now includes a `destroy` command to delete an instance based on its ID using `<class name>.destroy(<id>)`. It handles errors in a similar fashion to previous commands.
+
+## 15. Update
+
+The command interpreter is updated to include the `update` command. It can update an instance based on its ID, an attribute name, and an attribute value using `<class name>.update(<id>, <attribute name>, <attribute value>)`. It handles errors similarly to previous commands, disallowing certain arguments.
+
+## 16. Update from dictionary
+
+The `console.py` interpreter is updated to support updating an instance based on its ID with a dictionary representation using `<class name>.update(<id>, <dictionary representation>)`. It handles errors similarly to previous commands.
